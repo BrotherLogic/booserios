@@ -7,7 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface BooserViewController : UIViewController
+@interface BooserViewController : UIViewController <CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate> {
+    IBOutlet UILabel *locatingLabel;
+    IBOutlet UITableView *mainTable;
+}
+
+@property (nonatomic,retain) IBOutlet UILabel *locatingLabel;
+@property (nonatomic,retain) IBOutlet UITableView *mainTable;
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) CLLocation *currentLocation;
+@property (nonatomic,retain) NSMutableData *receivedData;
+@property (nonatomic,retain) NSString *state;
+@property (nonatomic,retain) NSArray *tableData;
+
+- (void)prepareForRequest;
 
 @end

@@ -23,6 +23,9 @@
 		F4E15D841775F4EA0078FC53 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E15D5F1775F4EA0078FC53 /* Foundation.framework */; };
 		F4E15D8C1775F4EA0078FC53 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4E15D8A1775F4EA0078FC53 /* InfoPlist.strings */; };
 		F4E15D8F1775F4EA0078FC53 /* BooserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E15D8E1775F4EA0078FC53 /* BooserTests.m */; };
+		F4E15D99177602B10078FC53 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E15D98177602B10078FC53 /* CoreLocation.framework */; };
+		F4E15D9B177602BA0078FC53 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E15D9A177602BA0078FC53 /* MapKit.framework */; };
+		F4E15DA317760B7F0078FC53 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E15DA217760B7F0078FC53 /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,9 @@
 		F4E15D8B1775F4EA0078FC53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F4E15D8D1775F4EA0078FC53 /* BooserTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BooserTests.h; sourceTree = "<group>"; };
 		F4E15D8E1775F4EA0078FC53 /* BooserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BooserTests.m; sourceTree = "<group>"; };
+		F4E15D98177602B10078FC53 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F4E15D9A177602BA0078FC53 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F4E15DA217760B7F0078FC53 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4E15DA317760B7F0078FC53 /* MobileCoreServices.framework in Frameworks */,
+				F4E15D9B177602BA0078FC53 /* MapKit.framework in Frameworks */,
+				F4E15D99177602B10078FC53 /* CoreLocation.framework in Frameworks */,
 				F4E15D5E1775F4EA0078FC53 /* UIKit.framework in Frameworks */,
 				F4E15D601775F4EA0078FC53 /* Foundation.framework in Frameworks */,
 				F4E15D621775F4EA0078FC53 /* CoreGraphics.framework in Frameworks */,
@@ -87,6 +96,7 @@
 		F4E15D511775F4EA0078FC53 = {
 			isa = PBXGroup;
 			children = (
+				F4E15DA217760B7F0078FC53 /* MobileCoreServices.framework */,
 				F4E15D631775F4EA0078FC53 /* Booser */,
 				F4E15D871775F4EA0078FC53 /* BooserTests */,
 				F4E15D5C1775F4EA0078FC53 /* Frameworks */,
@@ -106,6 +116,9 @@
 		F4E15D5C1775F4EA0078FC53 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F4E15DA417760D900078FC53 /* BZFourSquare */,
+				F4E15D98177602B10078FC53 /* CoreLocation.framework */,
+				F4E15D9A177602BA0078FC53 /* MapKit.framework */,
 				F4E15D5D1775F4EA0078FC53 /* UIKit.framework */,
 				F4E15D5F1775F4EA0078FC53 /* Foundation.framework */,
 				F4E15D611775F4EA0078FC53 /* CoreGraphics.framework */,
@@ -158,6 +171,14 @@
 				F4E15D8A1775F4EA0078FC53 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F4E15DA417760D900078FC53 /* BZFourSquare */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = BZFourSquare;
+			path = Booser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,10 +403,14 @@
 		F4E15D931775F4EA0078FC53 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FOURSQUARE_CALLBACK_URL = "booser://foursquare";
+				FOURSQUARE_CLIENT_ID = URIPWMO3ATOEUUNCITC3UIXDQ1CHHTJCSRG4ZKGA0T3ZQJCO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Booser/Booser-Prefix.pch";
 				INFOPLIST_FILE = "Booser/Booser-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -393,10 +418,14 @@
 		F4E15D941775F4EA0078FC53 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FOURSQUARE_CALLBACK_URL = "booser://foursquare";
+				FOURSQUARE_CLIENT_ID = URIPWMO3ATOEUUNCITC3UIXDQ1CHHTJCSRG4ZKGA0T3ZQJCO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Booser/Booser-Prefix.pch";
 				INFOPLIST_FILE = "Booser/Booser-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -454,6 +483,7 @@
 				F4E15D941775F4EA0078FC53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F4E15D951775F4EA0078FC53 /* Build configuration list for PBXNativeTarget "BooserTests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +492,7 @@
 				F4E15D971775F4EA0078FC53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
