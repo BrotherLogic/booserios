@@ -122,13 +122,18 @@
                 //Get the top entry and display instead of coordinates
                 NSArray *array = object;
                 VenueList *vList = [[VenueList alloc] initListWithData:array];
+                NSLog([NSString stringWithFormat:@"blah %@",vList]);
                 [mainTable setDataSource:vList];
+                mainTable.dataSource = vList;
+                
+                NSLog(@"Set the data source");
+                NSLog([NSString stringWithFormat:@"blaaah %@",[mainTable dataSource]]);
                 
                 NSDictionary *top = [array objectAtIndex:0];
                 locatingLabel.text = [top objectForKey:@"name"];
                 
-                state = @"beers";
-                [self getVenue:[top objectForKey:@"id"]];
+               // state = @"beers";
+               // [self getVenue:[top objectForKey:@"id"]];
             }
         }
         else{

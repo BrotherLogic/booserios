@@ -13,16 +13,19 @@
 @synthesize tableData;
 
 - (id)initListWithData: (NSArray *)data{
+    NSLog(@"Init");
     self = [super init];
     tableData = data;
     return self;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    NSLog(@"Blah Blah Blah");
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    NSLog(@"Balls");
     //We only have a single section
     return [tableData count];
 }
