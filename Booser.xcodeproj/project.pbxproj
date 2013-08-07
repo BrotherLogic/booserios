@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F465872917B0BA18002DF57E /* VenueList.m in Sources */ = {isa = PBXBuildFile; fileRef = F465872817B0B498002DF57E /* VenueList.m */; };
 		F4E15D5E1775F4EA0078FC53 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E15D5D1775F4EA0078FC53 /* UIKit.framework */; };
 		F4E15D601775F4EA0078FC53 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E15D5F1775F4EA0078FC53 /* Foundation.framework */; };
 		F4E15D621775F4EA0078FC53 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E15D611775F4EA0078FC53 /* CoreGraphics.framework */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F465872717B0B498002DF57E /* VenueList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VenueList.h; sourceTree = "<group>"; };
+		F465872817B0B498002DF57E /* VenueList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VenueList.m; sourceTree = "<group>"; };
 		F4E15D5A1775F4EA0078FC53 /* Booser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Booser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E15D5D1775F4EA0078FC53 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F4E15D5F1775F4EA0078FC53 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -134,6 +137,8 @@
 				F4E15D6D1775F4EA0078FC53 /* BooserAppDelegate.m */,
 				F4E15D751775F4EA0078FC53 /* MainStoryboard.storyboard */,
 				F4E15D781775F4EA0078FC53 /* BooserViewController.h */,
+				F465872717B0B498002DF57E /* VenueList.h */,
+				F465872817B0B498002DF57E /* VenueList.m */,
 				F4E15D791775F4EA0078FC53 /* BooserViewController.m */,
 				F4E15D641775F4EA0078FC53 /* Supporting Files */,
 			);
@@ -292,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F465872917B0BA18002DF57E /* VenueList.m in Sources */,
 				F4E15D6A1775F4EA0078FC53 /* main.m in Sources */,
 				F4E15D6E1775F4EA0078FC53 /* BooserAppDelegate.m in Sources */,
 				F4E15D7A1775F4EA0078FC53 /* BooserViewController.m in Sources */,

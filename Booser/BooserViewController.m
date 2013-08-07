@@ -7,6 +7,7 @@
 //
 
 #import "BooserViewController.h"
+#import "VenueList.h"
 
 #define FOURSQUARE_BASE           @"https://api.foursquare.com/v2/"
 
@@ -32,6 +33,7 @@
     
     locatingLabel.text = @"Loaded";
     NSLog(@"Done Load");
+    mainTable.delegate = self;
         
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
@@ -60,19 +62,14 @@
     
     locatingLabel.text = [NSString stringWithFormat:@"%1.4f,%1.4f",newLocation.coordinate.latitude,newLocation.coordinate.longitude];
     NSLog(locatingLabel.text);
-    //[self searchVenues:newLocation.coordinate];
-    [self getVenue:@"Blah"];
+    [self searchVenues:newLocation.coordinate];
+    //[self getVenue:@"Blah"];
+    
+    //Refresh the table view
+    NSLog(@"Reloading");
+    [mainTable setNeedsDisplay];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"Requesting table");
-    static NSString *MyIdentifier = @"MyReuseIdentifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:MyIdentifier];
-    }
-    cell.textLabel.text = @"Blah";
-    return cell;}
 
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
@@ -124,6 +121,9 @@
 
                 //Get the top entry and display instead of coordinates
                 NSArray *array = object;
+                VenueList *vList = [[VenueList alloc] initListWithData:array];
+                [mainTable setDataSource:vList];
+                
                 NSDictionary *top = [array objectAtIndex:0];
                 locatingLabel.text = [top objectForKey:@"name"];
                 
@@ -155,15 +155,6 @@
     // and start loading the data
     NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
     receivedData = [[NSMutableData alloc]init];
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{ 
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    NSLog(@"Just in case");
-    return 1;
 }
 
 - (void)getVenue:(NSString *) vid {

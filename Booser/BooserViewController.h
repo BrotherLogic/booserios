@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "VenueList.h"
 
 @interface BooserViewController : UIViewController <CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate> {
     IBOutlet UILabel *locatingLabel;
     IBOutlet UITableView *mainTable;
 }
 
+@property (nonatomic,retain) VenueList *vList;
 @property (nonatomic,retain) IBOutlet UILabel *locatingLabel;
 @property (nonatomic,retain) IBOutlet UITableView *mainTable;
 @property (strong, nonatomic) CLLocationManager *locationManager;
